@@ -311,5 +311,10 @@ form label {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      
+    }
+
+    .right_section {
+      align-items: flex-start;
     }
 }
