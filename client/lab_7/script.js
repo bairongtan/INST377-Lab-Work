@@ -40,7 +40,7 @@ function getRandomIntInclusive (min, max){
     const loadDataButton = document.querySelector('#data_load');
     const generateListButton = document.querySelector('#generate');
     const textField = document.querySelector('#resto');
-
+  
     const loadAnimation = document.querySelector('#data_load_animation');
     loadAnimation.style.display = 'none';
     generateListButton.classList.add('hidden');
@@ -58,9 +58,9 @@ function getRandomIntInclusive (min, max){
   
       // This changes the response from the GET into data we can use - an "object"
       storedList = await results.json();
-      if (storedList.length > 0){
-        generateListButton.classList.remove('hidden');
-    }
+      if (storedList.length > 0) {
+        generateListButton.classList.remove("hidden");
+      }
   
       loadAnimation.style.display = 'none';
       console.table(storedList); 
@@ -84,14 +84,14 @@ function getRandomIntInclusive (min, max){
   
     generateListButton.addEventListener('click', (event) => {
       console.log('generate new list');
-      const currentList = cutRestaurantList(storedList);
+      currentList = cutRestaurantList(storedList);
       console.log(currentList);
       injectHTML(currentList);
   
     })
 
     textField.addEventListener('input', (event) => {
-        console.log('input', event.target.value);
+        console.log('input', event.target.value);   
         const newList = filterList(currentList, event.target.value);
         console.log(newList);
         injectHTML(newList);
